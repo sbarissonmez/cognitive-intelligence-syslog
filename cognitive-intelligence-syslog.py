@@ -24,7 +24,7 @@ def _initialize_logger():
     log_directory = "{}/logs".format(os.path.dirname(os.path.abspath(__file__)))
     if not os.path.isdir(log_directory):
         os.mkdir(log_directory)
-    log_file = 'cognitive-intelligence-syslog-exporter.log'
+    log_file = 'cognitive-intelligence-syslog.log'
     log_path = os.path.join(log_directory, log_file)
     # creates the log handler
     handler = logging.handlers.RotatingFileHandler(log_path, maxBytes=10 * 1024 * 1024, backupCount=5)
