@@ -1,5 +1,5 @@
-# Cognitive Intelligence Syslog Exporter
-This script will get Cognitive Intelligence incidents from a Stealthwatch Enterprise SMC and send them as syslog to a specified destination. It is designed to be run as a cronjob, to ensure new alerts and updates are constantly being pushed to the destinations. On the initial run, it will fetch the last 1000 events and record the time the script was run. After that, it will only pull events that are new or modified since the previous run's timestamp.
+# Cognitive Intelligence Syslog from Stealthwatch Management Console (SMC)
+This script will get Cognitive Intelligence incidents from a Stealthwatch Management Console (SMC) and send them as syslog to a specified destination. It is designed to be run as a cronjob, to ensure new alerts and updates are constantly being pushed to the destinations. On the initial run, it will fetch the last 1000 events and record the time the script was run. After that, it will only pull events that are new or modified since the previous run's timestamp.
 
 For more information on the Stealthwatch Enterprise REST API, [please visit](https://developer.cisco.com/docs/stealthwatch/enterprise/)
 
@@ -13,7 +13,7 @@ For more information on the Stealthwatch Enterprise REST API, [please visit](htt
 
 ## Installation
 1. Ensure Python 3 is installed
-   * To download and install Python 3, please visit https://www.python.org
+   * To download and install Python 3, [please visit](https://www.python.org)
 2. Download the files [cognitive-intelligence-syslog.py](cognitive-intelligence-syslog.py) and [requirements.txt](requirements.txt)
 3. Install the necessary python modules with the command: `pip install -r requirements.txt`
     * *ensure you use the correct `pip` executable for your instance of Python 3*
@@ -52,7 +52,8 @@ The Cognitive Intelligence Incidents REST API is disabled by default. To enable 
 3. If running for the first time, enter the request configuration items when prompted
 4. This script is designed to be run as a cronjob after the initial run... it caches the previous run's timestamp and only pulls events that are new or have been updated since the last run
     * To schedule a cronjob, run the command `crontab -e` and add a new line containing: `0 0/10 * * * <path-to-python-script>`
-        * [More info on how to use crontab](https://opensource.com/article/17/11/how-use-cron-linux)
+    
+    More info on [how to use crontab](https://opensource.com/article/17/11/how-use-cron-linux)
 
 ## Troubleshooting
 A log file will be generated and updated with each run... it will be stored in a `logs` directory in the same directory as the python executable... please reference this log file for troubleshooting
