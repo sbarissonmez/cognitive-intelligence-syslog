@@ -3,6 +3,8 @@ This script will get Cognitive Intelligence incidents from a Stealthwatch Manage
 
 For more information on the Stealthwatch Enterprise REST API, [please visit](https://developer.cisco.com/docs/stealthwatch/enterprise/)
 
+![diagram](./diagram.jpg)
+
 ## Requirements
 1. Python 3.x+
     - Additional python modules required, please see [requirements.txt](requirements.txt) for details
